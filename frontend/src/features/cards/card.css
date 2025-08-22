@@ -1,0 +1,108 @@
+/* grid container */
+.user-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .user-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .user-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* card look & fixed size */
+.user-card {
+  background: #ffffffe4;
+  border: 2px solid #7b6b6b;
+  border-radius: 8px;
+  width: 250px;
+  height: 320px; /* fixed height */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* avatar */
+.user-card .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+/* info section */
+.user-card .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1; /* fill remaining space */
+  width: 100%;
+}
+
+/* name and email */
+.user-card h4 {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.user-card p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* bio takes remaining space */
+.user-card .bio {
+  flex: 1; /* grow to fill space */
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 0.25rem 0;
+}
+/* bio shows only 4 lines */
+.user-card .bio {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0.25rem 0;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* show max 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* skills pinned at bottom */
+.user-card .skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: auto; /* push to bottom */
+  font-size: 0.75rem;
+}
+
+.user-card .skill-tag {
+  background: #f0f0f0;
+  padding: 0.2rem 0.4rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
